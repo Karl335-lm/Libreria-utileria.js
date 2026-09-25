@@ -1,146 +1,126 @@
-/*
-1. Variables CSS (custom properties)
-
-- Propósito: Centralizar colores, fuentes y tamaños para fácil mantenimiento.
-- Beneficios: Cambios globales desde un solo lugar.
-*/
-
-:root {
-    --color-primario: #a22323;
-    --color-secundario: #4cc9f0;
-    --color-fondo: #f6c3c3;
-    --color-texto: #2b2d42;
-    --color-borde: #f3b05a;
-}
-
-/*
-2. Reset básico
-
-- Propósito: Eliminar márgenes y paddings predeterminados del navegador.
-- Importancia: Evitar inconsistencias entre navegadores.
-*/
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/*
-3. Estilos generales
-*/
-
 body {
- font-family: 'Inter', sans-serif;
-    background-color: var(--color-fondo);
-    color:var(--color-texto);
-    line-height: 1.6;
-    padding:40px 20px;
-
-}
-
-/*
-4. Contenedor principal
-*/
-
-.Contenedor {
-    max-width: 500px;
-    margin: 0 auto;
-    background: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-}
-
-/*
-5. Estilos de tipografía
-*/
-
-h1 {
-    font-size: 28px;
-    color: var(--color-primario);
-    margin-bottom: 8px;
-}
-
-.subtitulo {
-    color: #6c757d;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-/*
-6. Grupos de formulario
-*/
-
-.grupo-formulario {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    font-size: 14px;
-}
-
-/*
-7. Inputs y textarea
-*/
-
-input,
-textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid var(--color-borde);
-    border-radius: 8px;
-    box-sizing: border-box;
-    display: block;
-    font-size: 14px;
-    transition: all 0.3s;
-   
-}
-
-input:focus,
-textarea:focus {
-    border-color: var(--color-secundario);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(76, 201, 240, 0.2);
-}
-
-/*
-8. Disposición en columnas
-*/
-
-.grupo-doble {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-/*
-9. Botón de envío
-*/
-.contenedor-botones {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5adad;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
 }
-.boton {
-    background-color: var(--color-primario);
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    border-top: 5px solid #f5f7f9;
+    border-bottom: 5px solid #f7f5f6;
+}
+
+h2 { 
+    margin-top: 0; 
+    color: #d53434; 
+    text-align: center; 
+}
+
+.form-group { margin-bottom: 15px; }
+
+label { 
+    display: block; 
+    margin-bottom: 5px; 
+    color: #fd8645; 
+    font-weight: bold; 
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #EDBB00; 
+    box-shadow: 0 0 5px rgba(237, 187, 0, 0.5);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #f31b1b; 
     color: white;
     border: none;
-    padding: 14px 24px;
-    border-radius: 8px;
-    font-weight: 600;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
 }
 
-.boton:hover {
-    background-color: #2a0880;
+button:hover { 
+    background-color: #A50044; 
 }
 
-.clas2{
+.error-msg { 
+    color: #A50044; 
+    font-size: 13px; 
+    display: none; 
+    margin-top: 5px; 
+    font-weight: bold;
+}
+
+.links { 
+    text-align: center; 
+    margin-top: 15px; 
+    font-size: 14px; 
+}
+
+.links a {
+    color: #df481a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.links a:hover {
+    color: #dc1568;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 10; 
+    left: 0; top: 0; 
+    width: 100%; height: 100%; 
+    background-color: rgba(0, 30, 60, 0.6); 
+}
+
+.modal-content {
+    background-color: white;
+    margin: 20% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 300px;
     text-align: center;
-  
+    position: relative;
+    border-top: 5px solid #004D98;
+    border-bottom: 5px solid #A50044;
+}
+
+.close {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 24px; font-weight: bold;
+    cursor: pointer; color: #888;
+    transition: color 0.3s;
+}
+
+.close:hover { 
+    color: #A50044; 
 }
