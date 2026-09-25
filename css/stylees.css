@@ -120,9 +120,12 @@ textarea:focus {
 /*
 9. Botón de envío
 */
-
-.boton-ingresar {
-    margin-bottom: 10px;
+.contenedor-botones {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.boton {
     background-color: var(--color-primario);
     color: white;
     border: none;
@@ -131,27 +134,9 @@ textarea:focus {
     font-weight: 600;
     cursor: pointer;
     transition: background 0.3s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-.boton-registro{
-  background-color: var(--color-primario);
-    color: white;
-    border: none;
-    padding: 14px 24px;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s;
-    display: flex;
-    justify-content: center;
-    align-items: center;  
 }
 
-
-.boton-ingresar:hover {
+.boton:hover {
     background-color: #2a0880;
 }
 
