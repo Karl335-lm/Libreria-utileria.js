@@ -5,13 +5,13 @@ function validarCorreo(correo) {
     return regex.test(correo);
 }
 
-// 2. Valida que el texto solo contenga letras (incluye acentos y la ñ) y espacios
+// 2. Valida que el texto solo contenga letras mediante una expresion regular
 function soloLetras(texto) {
     const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
     return regex.test(texto) && texto.trim().length > 0;
 }
 
-// 3. Valida que un valor sea numérico y no exceda una longitud máxima
+// 3. Valida que un valor sea numérico 
 function validarLongitud(numero, maxLongitud) {
     const numStr = numero.toString().trim();
     const esNumero = /^\d+$/.test(numStr);
@@ -34,20 +34,17 @@ function calcularEdad(fechaNacimiento) {
     return edad;
 }
 
-// 5. Valida si la persona es mayor de edad (18 años o más)
+// 5. Valida que la persona sea mayor de edad
 function esMayorDeEdad(fechaNacimiento) {
     return calcularEdad(fechaNacimiento) >= 18;
 }
 
-// 6. Valida que la contraseña tenga mayúscula, minúscula, número, carácter especial y min 8 caracteres
+// 6. Validacion de contraseña, incluye caracteres especiales
 function validarPassword(password) {
     const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     return regex.test(password);
 }
-
-// --- FUNCIONES ADICIONALES ---
-
-// 7. Formatea una cadena de 10 dígitos a un formato de teléfono legible (XXX XXX XX XX)
+// 7. Formatea una cadena de 10 dígitos a un telefono
 function formatearTelefonoMX(telefono) {
     const num = telefono.toString().replace(/\D/g, '');
     if (num.length === 10) {
@@ -56,7 +53,7 @@ function formatearTelefonoMX(telefono) {
     return telefono;
 }
 
-// 8. Limpia los espacios extra de un texto (trim y espacios dobles internos)
+// 8. Limpia los espacios extra de un texto
 function limpiarTexto(texto) {
     return texto.trim().replace(/\s+/g, ' ');
 }
